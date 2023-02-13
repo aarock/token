@@ -1,0 +1,23 @@
+{
+  "name": "@aarock/token",
+  "author": "aarock",
+  "version": "1.0.0",
+  "description": "JWT Management",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./verify": "./dist/verify.js",
+    "./sign": "./dist/sign.js",
+    "./pluck": "./dist/pluck.js",
+    "./errors": "./dist/errors.js"
+  },
+  "dependencies": {
+    "@aarock/flake": "^1.0",
+    "jose": "^4.11"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11",
+    "typescript": "^4.7"
+  }
+}
