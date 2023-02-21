@@ -1,5 +1,17 @@
-export default function pluck ( req: any ): string {
-	const authorization = req?.headers?.authorization || req?.headers?.Authorization
-	const hasBearerToken = authorization?.split( " " )[ 0 ] === "Bearer"
-	return hasBearerToken ? authorization.split( " " )[ 1 ] : ( req?.query?.token || undefined )
+export default function pluck ( ctx: any ): string {
+
+	const authorization = ctx?.req?.headers?.authorization
+		|| ctx?.req?.headers?.Authorization
+		// as an expressjs request
+		|| ctx?.headers?.Authorization
+		|| ctx?.headers?.authorization
+		// as a yoga + graphql-ws subscription param
+		|| ctx?.params.extensions.headers?.Authorization
+		|| ctx?.params.extensions.headers?.authorization
+		// as a get request query parameter
+		|| ctx?.req?.query?.token
+		|| ctx?.query?.token
+
+	return authorization?.replace( "Bearer ", "" )
+
 }
