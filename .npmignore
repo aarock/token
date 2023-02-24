@@ -1,6 +1,2 @@
-.npmrc
-npde_modules
 private.pem
-package-lock.json
 tsconfig.json
-README.md
