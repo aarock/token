@@ -13,7 +13,7 @@ const publicKeyPath = fileURLToPath( new URL( "../keys/public.pem", import.meta.
 const publicKey = return readFileSync( keyPath ).toString()
 const jwt = sign( { foo: "bar", exp: "1h" }, publicKey )
 const token = await verify( jwt )
-token.assert( "courses:read" )
+console.log( token.foo ) // "bar"
 ```
 
 ## Advanced Usage
