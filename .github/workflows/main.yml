@@ -17,4 +17,5 @@ jobs:
           scope: '@aarock'
           token: ${{ secrets.ACCESS_TOKEN }}
       - run: npm ci
+      - run: npm run build
       - run: npm publish

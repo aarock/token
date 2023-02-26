@@ -12,6 +12,9 @@
     "./pluck": "./dist/pluck.js",
     "./errors": "./dist/errors.js"
   },
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "@aarock/flake": "^1.0",
     "jose": "^4.11"
@@ -19,9 +22,5 @@
   "devDependencies": {
     "@types/node": "^18.11",
     "typescript": "^4.7"
-  },
-  "files": [
-    "src",
-    "dist"
-  ]
+  }
 }
